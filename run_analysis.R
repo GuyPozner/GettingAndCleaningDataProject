@@ -1,4 +1,4 @@
-#Download and Unzip the data
+Download and Unzip the data
 download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip","UCIdata.zip")
 unzip("UCIdata.zip")
 
@@ -36,17 +36,20 @@ for(i in 1:nrow(activityLabels)){
 tidyDat$activity <- activity$V1
 
 #Store the tidy data
-write.csv(tidyDat, file = "tidy_data.csv")
+write.csv(tidyDat, file = "tidy_data.csv", row.names = FALSE)
 
 #Mean per subject Dataset
 meanDat <- aggregate(tidyDat[,features$V2[indices]], by = list(tidyDat$subject, tidyDat$activity), FUN = mean, na.rm = TRUE) 
 names(meanDat) <- c("subject", "activity",features$V2[indices])
 
+#Create the tidy_mean_data.txt file 
+write.table(meanDat,"tidy_mean_data.txt")
+
 #Splits the meanDat based on the activity
 splitDat <- split(meanDat, meanDat$activity)
 
 #Stores relevant files in .csv format
-lapply(1:length(splitDat), function(i) write.csv(splitDat[[i]][,-2], 
+lapply(1:length(splitDat), function(i) write.table(splitDat[[i]][,-2], 
                                                 file = paste0(names(splitDat[i]), ".csv"), 
                                                 row.names = FALSE)
        )

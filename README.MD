@@ -10,9 +10,10 @@
    y_test.txt and y_train.txt files.
 6. Gives a descriptive header based on the features.txt file
 7. Gives descriptive name instead of number to the activity based on activity_labels.txt
-8. Writes the clean data set into __tidy_data.txt__
+8. Writes the clean data set into __tidy_data.csv__
 9. Avrages the data based on activity and subject
-10. Splits the avearage data into 6 new tables containing the mean per subject per activity.
-11. Writes the 6 new tables into __ACTIVITY.CSV__
+10. Creates the  tidy_mean_data.txt file to submit to coursera
+11. Splits the avearage data into 6 new tables containing the mean per subject per activity.
+12. Writes the 6 new tables into __ACTIVITY.csv__
 
    
