@@ -1,6 +1,6 @@
 #Getting and Cleaning Data Course Project ReadMe
 
-##The __run_analysis.R__ script is preforms all the data tidiing as such:
+##The __run_analysis.R__ script preforms all the data tiding as such:
 1. Downloads and unzips the data set in the working directory.
 2. Reads all the relevant files containg the accelerometer data and
    the labels for the train and test data sets.
